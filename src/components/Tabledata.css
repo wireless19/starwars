@@ -1,0 +1,25 @@
+td {
+  border-bottom-style: solid;
+  border-bottom-color: #dddddd;
+  border-bottom-width: 1px;
+  text-align: left;
+  padding: 15px;
+}
+
+tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+td .fa-square {
+  color: #ecf0f1;
+  /* border: 1px solid #000000; */
+}
+
+th .fa-square {
+  color: #ecf0f1;
+  /* border: 1px solid #000000; */
+}
+
+.responsive {
+  overflow-x: auto;
+}

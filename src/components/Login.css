@@ -1,0 +1,75 @@
+.logoContainer {
+  height: 900px;
+  background-color: #031434;
+  padding-top: 20%;
+}
+
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+.formContainer {
+  height: 900px;
+}
+
+.card {
+  margin-top: 10%;
+  margin-bottom: 10%;
+  margin-left: 25%;
+  margin-right: 25%;
+
+  /* margin: 20%; */
+}
+
+.form-label {
+  color: #b0b9c8;
+  background-color: #ffffff;
+  border-color: #ffffff;
+  padding-left: 7px;
+  padding-right: 7px;
+  position: absolute;
+  margin-top: -12px;
+  margin-left: 2%;
+  z-index: 10;
+}
+
+.form-control:focus {
+  border-color: #0a74dc;
+  box-shadow: none;
+}
+
+.btn:focus,
+.btn:active {
+  box-shadow: none;
+}
+
+form .buttonColor {
+  background-color: #0a74dc;
+}
+
+.forgotp {
+  color: #0a74dc;
+}
+
+span {
+  text-decoration: underline;
+}
+
+p .andText {
+  color: #b0b9c8;
+  text-decoration: none;
+}
+
+.bocolor {
+  border: 2px solid;
+  border-color: #ff0000;
+}
+
+.errorcolor {
+  color: red;
+  text-decoration: none;
+  margin-top: 90%;
+}

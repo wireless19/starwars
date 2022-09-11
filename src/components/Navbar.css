@@ -1,0 +1,28 @@
+.bg-color {
+  background-color: #031434;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.bg-blue {
+  background-color: #0a74dc;
+}
+
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+}
+
+.bg-sb {
+  color: #a9c1ff;
+}
+
+.bg-lp {
+  color: #ffa9ec;
+}
+
+.bg-sy {
+  color: #fdffa9;
+}
