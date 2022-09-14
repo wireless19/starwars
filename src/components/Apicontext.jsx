@@ -24,8 +24,7 @@ export function APIContextProvider({ children }) {
         const requestThree = axios.get(people);
         const requestFour = axios.get(species);
 
-        axios
-            .all([requestOne, requestTwo, requestThree, requestFour])
+        axios.all([requestOne, requestTwo, requestThree, requestFour])
             .then(
                 axios.spread((...responses) => {
                     const responseOne = responses[0].data.results;
