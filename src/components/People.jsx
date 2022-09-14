@@ -15,7 +15,7 @@ function People() {
         navigate(`/people/${people.name}`);
     }
 
-    if (loading) return <h1>Loading...</h1>;
+
     if (error) return <h1>Error!</h1>;
 
     return (
@@ -39,7 +39,9 @@ function People() {
                                     <th>Height</th>
                                     <th>Created</th>
                                 </tr>
-                                {peopleData.map((people) =>
+                                {loading ? (
+                                    <h1>Loading...</h1>
+                                ) : (peopleData.map((people) =>
                                     <tr className="pointer" onClick={() => handleRowClick(people)}>
                                         <Tabledata
                                             rectangle={<i className=" fa-solid fa-square"></i>}
@@ -51,7 +53,7 @@ function People() {
                                             sixthcolumn={people.created}
                                         />
                                     </tr>
-                                )}
+                                ))}
                             </table>
                         </div>
                     </div>

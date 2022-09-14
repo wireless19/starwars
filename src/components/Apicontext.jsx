@@ -14,29 +14,31 @@ export function APIContextProvider({ children }) {
 
 
     useEffect(() => {
-        axios.get("https://swapi.dev/api/films")
-            .then(filmResponse => { getFilmData(filmResponse.data.results) })
-            .catch(error => { setError(error) })
-            .finally(() => { setLoading(false) })
-    }, []);
+        let films = "https://swapi.dev/api/films";
+        let starships = "https://swapi.dev/api/starships";
+        let people = "https://swapi.dev/api/people";
+        let species = "https://swapi.dev/api/species";
 
-    useEffect(() => {
-        axios.get("https://swapi.dev/api/starships")
-            .then(starshipResponse => { getstarshipData(starshipResponse.data.results) })
-            .catch(error => { setError(error) })
-            .finally(() => { setLoading(false) })
-    }, []);
+        const requestOne = axios.get(films);
+        const requestTwo = axios.get(starships);
+        const requestThree = axios.get(people);
+        const requestFour = axios.get(species);
 
-    useEffect(() => {
-        axios.get("https://swapi.dev/api/people")
-            .then(peopleResponse => { getPeopleData(peopleResponse.data.results) })
-            .catch(error => { setError(error) })
-            .finally(() => { setLoading(false) })
-    }, []);
+        axios
+            .all([requestOne, requestTwo, requestThree, requestFour])
+            .then(
+                axios.spread((...responses) => {
+                    const responseOne = responses[0].data.results;
+                    const responseTwo = responses[1].data.results;
+                    const responesThree = responses[2].data.results;
+                    const responesFour = responses[3].data.results;
 
-    useEffect(() => {
-        axios.get("https://swapi.dev/api/species")
-            .then(speciesResponse => { getSpeciesData(speciesResponse.data.results) })
+                    getFilmData(responseOne);
+                    getstarshipData(responseTwo);
+                    getPeopleData(responesThree);
+                    getSpeciesData(responesFour);
+                })
+            )
             .catch(error => { setError(error) })
             .finally(() => { setLoading(false) })
     }, []);

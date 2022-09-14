@@ -14,7 +14,6 @@ function Species() {
         navigate(`/species/${species.name}`);
     }
 
-    if (loading) return <h1>Loading...</h1>;
     if (error) return <h1>Error!</h1>;
 
     return (
@@ -38,7 +37,9 @@ function Species() {
                                     <th>Height</th>
                                     <th>Created</th>
                                 </tr>
-                                {speciesData.map((specie) =>
+                                {loading ? (
+                                    <h1>Loading...</h1>
+                                ) : (speciesData.map((specie) =>
                                     <tr className="pointer" onClick={() => handleRowClick(specie)}>
                                         <Tabledata
                                             rectangle={<i className=" fa-solid fa-square"></i>}
@@ -50,7 +51,7 @@ function Species() {
                                             sixthcolumn={specie.created}
                                         />
                                     </tr>
-                                )}
+                                ))}
                             </table>
                         </div>
                     </div>

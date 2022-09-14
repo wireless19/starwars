@@ -14,7 +14,6 @@ function Starships() {
         navigate(`/starships/${starships.name}`);
     }
 
-    if (loading) return <h1>Loading...</h1>;
     if (error) return <h1>Error!</h1>;
 
     return (
@@ -38,7 +37,9 @@ function Starships() {
                                     <th>Length</th>
                                     <th>Character</th>
                                 </tr>
-                                {starshipData.map((starship) =>
+                                {loading ? (
+                                    <h1>Loading...</h1>
+                                ) : (starshipData.map((starship) =>
                                     <tr className="pointer" onClick={() => handleRowClick(starship)}>
                                         <Tabledata
                                             rectangle={<i className=" fa-solid fa-square"></i>}
@@ -50,7 +51,7 @@ function Starships() {
                                             sixthcolumn="https://swapi.dev/api/people"
                                         />
                                     </tr>
-                                )}
+                                ))}
                             </table>
                         </div>
                     </div>

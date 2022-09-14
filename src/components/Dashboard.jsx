@@ -16,7 +16,6 @@ function Dashboard() {
         navigate(`/dashboard/${films.title}`);
     }
 
-    if (loading) return <h1>Loading...</h1>;
     if (error) return <h1>Error!</h1>;
 
     return (
@@ -41,7 +40,9 @@ function Dashboard() {
                                     <th>Episode ID</th>
                                     <th>Character</th>
                                 </tr>
-                                {filmData.map((film) =>
+                                {loading ? (
+                                    <h1>Loading...</h1>
+                                ) : (filmData.map((film) =>
                                     <tr className="pointer" onClick={() => handleRowClick(film)}>
                                         <Tabledata
                                             rectangle={<i className=" fa-solid fa-square"></i>}
@@ -53,8 +54,9 @@ function Dashboard() {
                                             sixthcolumn="https://swapi.dev/api/people"
                                         />
                                     </tr>
-                                )}
+                                ))}
                             </table>
+
                         </div>
                     </div>
 
