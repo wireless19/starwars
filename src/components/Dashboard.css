@@ -1,3 +1,8 @@
+.form-check-input:focus,
+.form-check-input:active {
+  box-shadow: none;
+}
+
 .col-auto {
   width: 18%;
 }
